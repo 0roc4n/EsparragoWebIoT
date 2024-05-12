@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg  py-3 fixed-top mt-1 mx-5 rounded-pill">
     <div class="container px-5">
-        <a class="navbar-brand" href="#home"><span class="fw-bolder text-primary">EsparragoWeb-IoT</span></a>
+        <a class="navbar-brand" href="index"><span class="fw-bolder text-primary">EsparragoWeb-IoT</span></a>
         <div class="nav  d-none d-md-block">
             <ul class="nav">
                 <li class="nav-item">

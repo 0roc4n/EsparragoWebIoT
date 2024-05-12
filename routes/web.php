@@ -1,15 +1,17 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProfilesController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 Route::get('/projects', function(){
     return view('projects');
 });
+Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
 
 Route::get('/index', [ProfilesController::class, 'index'])->name('page.index');
 
