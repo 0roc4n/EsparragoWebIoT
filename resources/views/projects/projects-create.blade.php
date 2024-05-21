@@ -18,17 +18,17 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <div><h5 class="fw-bold">Blog List</h5></div>
+                    <div><h5 class="fw-bold">Project List</h5></div>
                     <div class="text-end"><a href="blog-add" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add New</a></div>
                     <div class="text-center">
                         <table id="example" class="table table-striped" style="width:100%">
                             <thead class="text-center">
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Description</th>
-                                    <th>Category</th>
-                                    <th>Image</th>
-                                    <th>Action</th>
+                                    <th class="text-center">Name</th>
+                                    <th class="text-center">Category</th>
+                                    <th class="text-center">Description</th>
+                                    <th class="text-center">Image</th>
+                                    <th class="text-center">Action</th>
                                 </tr>
                             </thead>
                             <tbody class=""> 
@@ -47,7 +47,10 @@
                                     <td>{{$project->description}}</td>
                                     <td>{{$project->catergory}}</td>
                                     <td>{{$project->img_path}}</td>
-                                    <td class="btn btn-primary">View</td>
+                                    <td>
+                                        <a href="{{url('admin/edit-project/'. $project->id)}}" class="btn btn-primary">Update</a>
+                                        <a href="#" class="btn btn-danger">Remove</a>
+                                    </td>
                                 </tr>
                                 @endforeach
                                @endif

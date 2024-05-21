@@ -34,6 +34,8 @@ Route::middleware('auth')->group(function () {
     // project route
     Route::get('admin/projects', [ProjectController::class, 'create_project'])->name('project.add');
     Route::post('admin/add-project',[ProjectController::class, 'store'])->name('projects.create');
+    Route::get('admin/edit-project/{id}', [ProjectController::class, 'edit'])->name('project.edit');
+    Route::patch('admin/update-project/{id}', [ProjectController::class, 'update'])->name('project.update');
     
 });
 

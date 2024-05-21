@@ -3,16 +3,16 @@
         <a class="navbar-brand" href="index"><span class="fw-bolder text-primary">EsparragoWeb-IoT</span></a>
         <div class="nav  d-none d-md-block">
             <ul class="nav">
-                <li class="nav-item">
+                <li class="nav-item fw-bold">
                   <a class="nav-link active" aria-current="page" href="#home">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item  fw-bold">
                   <a class="nav-link" href="#aboutme">About Me</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item fw-bold">
                   <a class="nav-link" href="#blogs">Blogs</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item fw-bold">
                     <a class="nav-link" href="#contact">Contact Me</a>
                 </li>
               </ul>
