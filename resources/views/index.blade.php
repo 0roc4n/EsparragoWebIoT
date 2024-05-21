@@ -21,7 +21,7 @@
         <!-- script -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="d-flex flex-column h-100">
+    <body class="d-flex flex-column h-100 ">
         <main class="flex-shrink-0">
             <!-- Navigation-->
             @include('layouts.nav')
@@ -175,35 +175,27 @@
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-11 col-xl-9 col-xxl-8">
                             <!-- Project Card 1-->
-                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">OJT-PhlPost Week 1</h2>
-                                            <p>In Week 1, I focused on identifying and discussing the existing problems within PhilPost's office environment, particularly those related to outdated systems and processes. As an IT student interning here, I delved into the intricacies of these challenges and began brainstorming potential technological approaches to address them. Join me as I kickstarted this journey by unraveling the complexities and laying the groundwork for innovative solutions that can revolutionize PhilPost's operations</p>
+                            @foreach ($blogs as $index => $blog)
+                                @if ($index % 3 == 0 && $index != 0)
+                                    </div></div><div class="row gx-5 justify-content-center">
+                                @endif
+                                <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                                    <div class="card-body p-0">
+                                        <div class="d-flex align-items-center">
+                                            <div class="p-5">
+                                                <h2 class="fw-bolder">{{$blog->title}}</h2>
+                                                <p>
+                                                    {{ \Illuminate\Support\Str::limit($blog->content, 100, '...') }}
+                                                </p>
+                                            </div>
+                                            <div class="">
+                                                <img class="img-fluid m-0" src="/blog-images/{{$blog->img_path}}" alt="..." />
+                                            </div>
                                         </div>
-                                        <div class="">
-                                            <img class="img-fluid m-0" src="{{url('ojt-pics/week1.jpg')}}" alt="..." />
-                                        </div>
+                                        <div class="mb-2 mx-5 text-start"><a href="/blogs">Read full-></a></div>
                                     </div>
-                                    <div class="mb-2 mx-5 text-start"><a href="#">Read full-></a></div>
                                 </div>
-                            </div>
-                            <!-- Project Card 2-->
-                            <div class="card overflow-hidden shadow rounded-4 border-0">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">OJT-PhlPost Week 2</h2>
-                                            <p>In Week 2, our focus shifted towards identifying the approach to tackle the identified problems within PhilPost's office environment. With the issues pinpointed, it was crucial to delineate the roles of each team member. Assigned as the lead programmer, my responsibility was to spearhead the technical aspect of the solution. Join me as I navigate through the process of structuring our approach and defining the roles essential to executing our plan effectively.</p>
-                                        </div>
-                                        <div class="">
-                                            <img class="img-fluid" src="{{url('ojt-pics/week2.jpg')}}" alt="..." />
-                                        </div>
-                                    </div>
-                                    <div class="mb-2 mx-5 text-start"><a href="#">Read full-></a></div>
-                                </div>
-                            </div>
+                            @endforeach
                             <div class="show-more mt-5 text-end">
                                 <a href="#">Show more -></a>
                             </div>
@@ -219,7 +211,7 @@
                         <div class="col-xxl-8">
                             <div class="text-center my-5">
                                 <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">About Me</span></h2>
-                                <p class="lead fw-light mb-4">My name is James Esparrago and I'm here to help you with?...</p>
+                                <p class="lead fw-light mb-4">My name is James and I'm here to help you with?...</p>
                                 <p class="text-muted">Hey there! I'm James Esparrago, a passionate Information Technology student with a knack for diving deep into the world of tech. My interests span across various domains, from web development to embedded systems, networking, and cybersecurity.
 
                                     I find joy in crafting seamless user experiences through web development, exploring the intricacies of embedded systems, ensuring robust network infrastructures, and delving into the ever-evolving realm of cybersecurity.
@@ -227,11 +219,29 @@
                                     When I'm not immersed in lines of code or exploring the latest tech trends, you can find me enjoying a good cup of coffee, tinkering with new gadgets, or exploring the great outdoors.
                                     
                                     Join me on this exciting journey as we navigate through the vast landscape of technology together!</p>
+                                
                                 <div class="d-flex justify-content-center fs-2 gap-4">
                                     <a class="text-gradient" href="https://www.facebook.com/james.esparrago.92"><i class="bi bi-facebook"></i></a>
                                     <a class="text-gradient" href="https://www.linkedin.com/in/james-esparrago-82b7b1231/"><i class="bi bi-linkedin"></i></a>
                                     <a class="text-gradient" href="https://github.com/0roc4n"><i class="bi bi-github"></i></a>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="bg-light py-5" id="aboutme">
+                <div class="container px-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-xxl-8">
+                            <div class="text-center my-5">
+                                <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Skills</span></h2>
+                                <div class="background-" style="width: 18rem;">
+                                    <div class="card-body">
+                                      <h5 class="fw-bold">PHP</h5>
+                                      <img src="stack-icons/laravel.png" alt="">
+                                    </div>
+                                  </div>
                             </div>
                         </div>
                     </div>

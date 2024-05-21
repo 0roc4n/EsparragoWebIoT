@@ -20,7 +20,8 @@ class BlogController extends Controller
         $request->validate([
             'image' => 'required|mimes:jpg,png,jpeg|max:5048'
         ]);
-        $newImage = time(). '-'. $request->title. '.'. $request->image->extension();
+        
+        $newImage = time(). '-'. $request->author. '.'. $request->image->extension();
         $request->image->move(public_path('blog-images'), $newImage);
 
         $blogs = Blogs::create([

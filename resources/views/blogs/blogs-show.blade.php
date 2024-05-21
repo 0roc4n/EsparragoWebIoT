@@ -24,15 +24,15 @@
     <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
             <!-- Navigation-->
-            @include('layouts.nav')
+            @include('layouts.nav-link')
             <!-- Header-->
             <div class="container py-5 mt-5">
                 <div class="content px-5 pb-5">
-                    <h2 class="border-bottom border-5">{{$blogs->title}}</h2>
-                    <div class="row">
-                        <div class="col shadow rounded"><img src="/blog-images/{{$blogs->img_path}}" alt=""></div>
-                        <div class="col"><h4 class="fw-bold">Writen by:</h4>{{$blogs->author}}</div>
-                    </div>
+                    <h2 class="border-bottom border-5 fw-bold">{{$blogs->title}}</h2> <span class="text-end">{{$blogs->created_at}} : {{$blogs->catergory}}</span>
+                    
+                        <div class="col shadow rounded text-center"><img src="/blog-images/{{$blogs->img_path}}" alt=""></div>
+                        <div class="col"><h4 class="fw-bold">Writen by: {{$blogs->author}}</h4></div>
+                    
                     <div class="content">
                         <p style="line-height: 2.5; text-align: justify;">{{$blogs->content}}</p>
                     </div>

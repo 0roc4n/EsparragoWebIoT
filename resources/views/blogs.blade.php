@@ -24,7 +24,7 @@
     <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
             <!-- Navigation-->
-            @include('layouts.nav')
+            @include('layouts.nav-link')
             <!-- Header-->
             @include('blogs.blogs-index')
 
