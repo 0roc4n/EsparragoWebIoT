@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Blogs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
+use Illuminate\Validation\ValidationException;
 
 class BlogController extends Controller
 {
@@ -42,5 +43,40 @@ class BlogController extends Controller
         
         return view('blogs.blogs-show', compact('blogs'))->with(['blogs'=>$blogs]);
     }
-   
+    public function edit($id){
+        $blogs = Blogs::find($id);
+        if (!$blogs) {
+            return redirect()->route('/admin/blogs')->with('flash_message', 'blog not found');
+        }
+        return view('blogs.blogs-edit', compact('blogs'));
+    }
+   public function update(Request $request, $blog_id){
+    try {
+
+        $blogs = Blogs::find($blog_id);
+        //$newImage = time(). '-update'. '.'. $request->image->extension();
+        //$request->image->move(public_path('blog-images'), $newImage);
+
+        $blogs->update([
+            "title" => $request->input('title'),
+            "author" => $request->input('author'), 
+            "content" => $request->input('content'),
+            "catergory" => $request->input('category'),
+            "status" => $request->input('status'),
+            //"img_path" => $newImage,
+        ]);
+        return redirect('/admin/blogs')->with('flash_mssg', 'Update Success!');
+    } catch (ValidationException $e) {
+        return redirect()->back()->with('flash_mssg', $e);
+    }
+   }
+   public function destroy($id){
+    $blogs = Blogs::find($id);
+    if($blogs){
+        $blogs->delete();
+        return redirect('/admin/blogs')->with('flash_mssg', 'Delete Success!');
+    }else {
+        return redirect('/admin/blogs')->with('error_mssg', '404 Not Found!');
+    }
+   }
 }

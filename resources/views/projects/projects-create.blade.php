@@ -47,9 +47,15 @@
                                     <td>{{$project->description}}</td>
                                     <td>{{$project->catergory}}</td>
                                     <td>{{$project->img_path}}</td>
-                                    <td>
-                                        <a href="{{url('admin/edit-project/'. $project->id)}}" class="btn btn-primary">Update</a>
-                                        <a href="#" class="btn btn-danger">Remove</a>
+                                    <td class="d-flex justify-center">
+                                        <a href="{{url('admin/edit-project/'. $project->id)}}" class="btn btn-success">Update</a>
+                                        <form method="POST" action="{{ route('project.destroy', $project->id) }}" class="ms-2">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger" data-delete-url="{{ route('project.destroy', $project->id) }}" title="Delete Transmittal Record">Remove</button>
+                                        </form>
+                                           
+                                        
                                     </td>
                                 </tr>
                                 @endforeach

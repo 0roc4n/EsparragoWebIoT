@@ -23,14 +23,14 @@
                     <div class="text-center">
                         <table id="example" class="table table-striped" style="width:100%">
                             <thead class="text-center">
-                                <tr>
-                                    <th>Title</th>
-                                    <th>Author</th>
-                                    <th>Content</th>
-                                    <th>Category</th>
-                                    <th>Status</th>
-                                    <th>Created Date</th>
-                                    <th>Action</th>
+                                <tr class="text-center">
+                                    <th class="text-center">Title</th>
+                                    <th class="text-center">Author</th>
+                                    <th class="text-center">Content</th>
+                                    <th class="text-center">Category</th>
+                                    <th class="text-center">Status</th>
+                                    <th class="text-center">Created Date</th>
+                                    <th class="text-center">Action</th>
                                 </tr>
                             </thead>
                             <tbody class=""> 
@@ -47,7 +47,14 @@
                                     <td>{{$blog->catergory}}</td>
                                     <td>{{$blog->status}}</td>
                                     <td>{{$blog->created_at}}</td>
-                                    <td>View</td>
+                                    <td class="d-flex justify-center">
+                                        <a href="{{url('admin/edit-blog/'. $blog->id)}}" class="btn btn-success">Update</a>
+                                        <form method="POST" action="{{ route('blog.destroy', $blog->id) }}" class="ms-2">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger" data-delete-url="{{ route('blog.destroy', $blog->id) }}" title="Delete Transmittal Record">Remove</button>
+                                        </form>
+                                    </td>
                                 </tr>
                                 @endforeach
                                @endif

@@ -54,14 +54,14 @@ class ProjectController extends Controller
             //     'img_path' => 'nullable|mimes:jpg,png,jpeg|max:10240'
             // ]);
             
-            // $newImage = time(). '-update'. '.'. $request->img_path->extension();
-            // $request->img_path->move(public_path('projects-images'), $newImage);
+            $newImage = time(). '-update'. '.'. $request->img_path->extension();
+            $request->img_path->move(public_path('projects-images'), $newImage);
 
             $project->update([
                 "name" => $request->input('name'),
                 "description" => $request->input('description'), 
                 "category" => $request->input('category'),
-                // "img_path" => $newImage,
+                "img_path" => $newImage,
             ]);
             return redirect('admin/projects')->with('flash_mssg', 'Project update success');
 
@@ -69,5 +69,13 @@ class ProjectController extends Controller
             return redirect()->back()->withErrors($e->errors())->withInput();
         }
     }
-   
+    public function destroy($id){
+    $project = Project::find($id);
+    if($project){
+        $project->delete();
+        return redirect('admin/projects')->with('flash_mssg', 'Delete Success!');
+    }else {
+        return redirect('admin/projects')->with('error_mssg', '404 Not Found!');
+    }
+   }
 }
