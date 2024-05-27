@@ -236,44 +236,59 @@
                         <div class="col-xxl-8">
                             <div class="text-center my-5">
                                 <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Skills</span></h2>
-                                <div class="d-flex  justify-content-between">
-                                    <div class="bg-gradient-primary-to-secondary rounded shadow" style="width: 10rem;">
-                                        <div class="card-body">
-                                          <h5 class="fw-bold pt-3 text-white">Laravel</h5>
-                                          <img src="stack-icons/laravel.png" class="" alt="">
+                                <div class="container">
+                                    <div class="row g-3">
+                                        <div class="col-6 col-md-4 col-lg-2">
+                                            <div class="bg-gradient-primary-to-secondary rounded shadow" style="width: 100%;">
+                                                <div class="card-body">
+                                                    <h5 class="fw-bold pt-3 text-white">Laravel</h5>
+                                                    <img src="stack-icons/laravel.png" class="img-fluid" alt="Laravel">
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="bg-gradient-primary-to-secondary rounded shadow" style="width: 10rem;">
-                                        <div class="card-body">
-                                          <h5 class="fw-bold pt-3 text-white">Python</h5>
-                                          <img src="stack-icons/python.png" class="" alt="">
+                                        <div class="col-6 col-md-4 col-lg-2">
+                                            <div class="bg-gradient-primary-to-secondary rounded shadow" style="width: 100%;">
+                                                <div class="card-body">
+                                                    <h5 class="fw-bold pt-3 text-white">Python</h5>
+                                                    <img src="stack-icons/python.png" class="img-fluid" alt="Python">
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="bg-gradient-primary-to-secondary rounded shadow" style="width: 10rem;">
-                                        <div class="card-body">
-                                          <h5 class="fw-bold pt-3 text-white">C++</h5>
-                                          <img src="stack-icons/cpp.png" class="" alt="">
+                                        <div class="col-6 col-md-4 col-lg-2">
+                                            <div class="bg-gradient-primary-to-secondary rounded shadow" style="width: 100%;">
+                                                <div class="card-body">
+                                                    <h5 class="fw-bold pt-3 text-white">C++</h5>
+                                                    <img src="stack-icons/cpp.png" class="img-fluid" alt="C++">
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="bg-gradient-primary-to-secondary rounded shadow" style="width: 10rem;">
-                                        <div class="card-body">
-                                          <h5 class="fw-bold pt-3 text-white">HTML</h5>
-                                          <img src="stack-icons/html.png" class="" alt="">
+                                        <div class="col-6 col-md-4 col-lg-2">
+                                            <div class="bg-gradient-primary-to-secondary rounded shadow" style="width: 100%;">
+                                                <div class="card-body">
+                                                    <h5 class="fw-bold pt-3 text-white">HTML</h5>
+                                                    <img src="stack-icons/html.png" class="img-fluid" alt="HTML">
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="bg-gradient-primary-to-secondary rounded shadow" style="width: 10rem;">
-                                        <div class="card-body">
-                                          <h5 class="fw-bold pt-3 text-white">CSS</h5>
-                                          <img src="stack-icons/css.png" class="" alt="">
+                                        <div class="col-6 col-md-4 col-lg-2">
+                                            <div class="bg-gradient-primary-to-secondary rounded shadow" style="width: 100%;">
+                                                <div class="card-body">
+                                                    <h5 class="fw-bold pt-3 text-white">CSS</h5>
+                                                    <img src="stack-icons/css.png" class="img-fluid" alt="CSS">
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="bg-gradient-primary-to-secondary rounded shadow" style="width: 10rem;">
-                                        <div class="card-body">
-                                          <h5 class="fw-bold pt-3 text-white">Javascript</h5>
-                                          <img src="stack-icons/js.png" class="" alt="">
+                                        <div class="col-6 col-md-4 col-lg-2">
+                                            <div class="bg-gradient-primary-to-secondary rounded shadow" style="width: 100%;">
+                                                <div class="card-body">
+                                                    <h5 class="fw-bold pt-3 text-white">Javascript</h5>
+                                                    <img src="stack-icons/js.png" class="img-fluid" alt="Javascript">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
