@@ -9,6 +9,7 @@
 
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
         <!-- Custom Google font-->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
@@ -20,6 +21,7 @@
         <link href="css/styles.css" rel="stylesheet" />
         <!-- script -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body class="d-flex flex-column h-100 ">
         <main class="flex-shrink-0">
@@ -167,13 +169,13 @@
                 </div>
             </header>
             <!-- blogs-->
-            <section class="py-5 d-none d-md-block" id="blogs">
+            <section class="py-5" id="blogs">
                 <div class="container px-5 mb-5">
                     <div class="text-center mb-5">
                         <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Blogs</span></h1>
                     </div>
                     <div class="row gx-5 justify-content-center">
-                        <div class="col-lg-11 col-xl-9 col-xxl-8">
+                        <div class="col-sm-12 col-lg-11 col-xl-9 col-xxl-8">
                             <!-- Project Card 1-->
                             @foreach ($blogs as $index => $blog)
                                 @if ($index % 3 == 0 && $index != 0)
@@ -181,14 +183,14 @@
                                 @endif
                                 <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
                                     <div class="card-body p-0">
-                                        <div class="d-flex align-items-center">
-                                            <div class="p-5">
+                                        <div class="d-flex flex-column flex-md-row align-items-center">
+                                            <div class="order-2 order-md-1 p-5">
                                                 <h2 class="fw-bolder">{{$blog->title}}</h2>
                                                 <p>
                                                     {{ \Illuminate\Support\Str::limit($blog->content, 100, '...') }}
                                                 </p>
                                             </div>
-                                            <div class="">
+                                            <div class="order-1 order-md-2">
                                                 <img class="img-fluid m-0" src="/blog-images/{{$blog->img_path}}" alt="..." />
                                             </div>
                                         </div>
@@ -203,7 +205,7 @@
                     </div>
                 </div>
             </section>
-
+            
             <!-- About Section-->
             <section class="bg-light py-5" id="aboutme">
                 <div class="container px-5">

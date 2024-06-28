@@ -20,6 +20,7 @@
         <link href="css/styles.css" rel="stylesheet" />
         <!-- script -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">

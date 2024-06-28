@@ -1,41 +1,22 @@
-<style>
-  .carousel-inner img {
-    width: 100%;
-    height: 500px; /* Adjust this to your preferred height */
-    object-fit: cover; /* Ensure the image covers the area without stretching */
-  }
-</style>
-
 <div class="container py-5 mt-5">
   <div class="content px-5 pb-5">
     <h2 class="border-bottom border-5">Projects</h2>
-    <div class="content px-5 pb-5">
-      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          @foreach ($projects as $index => $project)
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}" aria-current="{{ $index == 0 ? 'true' : '' }}" aria-label="Slide {{ $index + 1 }}"></button>
-          @endforeach
+    <div class="flex flex-wrap mt-10 gap-3 justify-center">
+      @foreach ($projects as $project)
+      <div class="bg-gray-300 w-full sm:w-full md:w-full lg:w-5/12 rounded-xl p-5 shadow-lg">
+        <img src="" alt="">
+        <h5>Project Title: <span class="fw-bold">{{$project->name}}</span> || {{$project->category}}</h5><span>{{$project->created_at}}</span>
+        <div>
+          <img src="projects-images/{{$project->img_path}}" class="rounded-xl" alt="">
         </div>
-        <div class="carousel-inner items-center shadow mt-5 rounded">
-          @foreach ($projects as $index => $project)
-          <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
-            <img src="/projects-images/{{$project->img_path}}" class="d-block w-100" alt="{{$project->name}}">
-            <div class="carousel-caption d-none d-md-block text-black bg-white shadow rounded">
-              <h5>Name: {{$project->name}} | Category: {{$project->category}}</h5>
-              <p>{{$project->description}}</p>
-            </div>
-          </div>
-          @endforeach
+        <div class="mt-10">
+          <p>Description:</p>
+          <p>
+            {{$project->description}}
+          </p>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
+      @endforeach
     </div>
   </div>
 </div>
